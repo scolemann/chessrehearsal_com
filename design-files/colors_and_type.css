@@ -1,0 +1,180 @@
+/* ──────────────────────────────────────────────────────────────────
+   Chess Rehearsal — Colors & Type
+   Stage Play aesthetic: theatrical dark backgrounds, warm-gold accent.
+   Single accent per context. Typography hierarchy over color blocks.
+   ────────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PaytoneOne";
+  src: url("fonts/PaytoneOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  /* ── Surfaces (dark theme is canonical) ──────────────────────── */
+  --cr-bg:           #0A0A0A;  /* canvas / app background      */
+  --cr-surface:      #151515;  /* cards, sheets, inputs        */
+  --cr-card:         #1F1F1F;  /* elevated cards, dialogs      */
+  --cr-stage-navy:   #0F1A2B;  /* "stage" ambience accent bg   */
+
+  /* ── Brand accent ────────────────────────────────────────────── */
+  --cr-gold:         #FF9B00;  /* warm gold — celebration      */
+  --cr-gold-soft:    rgba(255, 155, 0, 0.30);  /* card borders */
+  --cr-gold-faint:   rgba(255, 155, 0, 0.12);  /* tinted bg    */
+  --cr-action-blue:  #1D4ED8;  /* primary action (sparingly)   */
+
+  /* ── Text ────────────────────────────────────────────────────── */
+  --cr-fg-primary:   #D9E2EC;  /* primary on dark              */
+  --cr-fg-secondary: #9CA3AF;  /* muted gray                   */
+  --cr-fg-on-light:  #1F2933;  /* primary on light bg          */
+  --cr-fg-white:     #FFFFFF;  /* full white (rare)            */
+
+  /* ── Dividers / shadow ───────────────────────────────────────── */
+  --cr-divider:        rgba(255, 255, 255, 0.10);
+  --cr-divider-strong: rgba(255, 255, 255, 0.20);
+  --cr-shadow:         rgba(0, 0, 0, 0.30);
+
+  /* ── Semantic ────────────────────────────────────────────────── */
+  --cr-success: #4ADE80;   /* soft green, muted not lime       */
+  --cr-error:   #EF4444;   /* sparing                          */
+  --cr-warning: #F59E0B;   /* amber                            */
+  --cr-info:    #1D4ED8;   /* same as action blue              */
+
+  /* ── Chess board (rehearsal palette) ─────────────────────────── */
+  --cr-square-light: #E8D8A0;
+  --cr-square-dark:  #A89048;
+
+  /* ── Type families ───────────────────────────────────────────── */
+  --cr-font-display: "PaytoneOne", "Nunito", system-ui, sans-serif;
+  --cr-font-body:    "Nunito", system-ui, -apple-system, sans-serif;
+  --cr-font-mono:    "Roboto Mono", "Roboto", ui-monospace, monospace;
+
+  /* ── Spacing (8px grid) ──────────────────────────────────────── */
+  --cr-space-xs: 6px;
+  --cr-space-sm: 12px;
+  --cr-space-md: 20px;
+  --cr-space-lg: 32px;
+  --cr-space-xl: 48px;
+
+  /* ── Radius ──────────────────────────────────────────────────── */
+  --cr-radius-sm: 8px;
+  --cr-radius-md: 12px;   /* buttons, inputs                  */
+  --cr-radius-lg: 16px;   /* cards                            */
+  --cr-radius-xl: 20px;   /* modals                           */
+
+  /* ── Elevation ───────────────────────────────────────────────── */
+  --cr-elev-1: 0 1px 2px rgba(0,0,0,0.30);
+  --cr-elev-2: 0 4px 12px rgba(0,0,0,0.40);
+  --cr-elev-3: 0 12px 32px rgba(0,0,0,0.55);
+  --cr-spotlight: 0 0 80px 20px rgba(255,155,0,0.10);
+}
+
+/* ── Base ───────────────────────────────────────────────────────── */
+html, body {
+  background: var(--cr-bg);
+  color: var(--cr-fg-primary);
+  font-family: var(--cr-font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Semantic type ──────────────────────────────────────────────── */
+.cr-display {                /* hero / page header — Paytone, ALL CAPS short labels */
+  font-family: var(--cr-font-display);
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  color: var(--cr-fg-primary);
+  font-weight: 400;
+}
+.cr-h1 {                     /* AppBar title          */
+  font-family: var(--cr-font-display);
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  color: var(--cr-fg-primary);
+  font-weight: 400;
+}
+.cr-h2 {                     /* section title         */
+  font-family: var(--cr-font-body);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cr-fg-primary);
+}
+.cr-card-title {             /* card / list-item title */
+  font-family: var(--cr-font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cr-fg-primary);
+}
+.cr-body {
+  font-family: var(--cr-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--cr-fg-primary);
+}
+.cr-label {                  /* form labels, "Continue" section header */
+  font-family: var(--cr-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cr-fg-secondary);
+}
+.cr-caption {
+  font-family: var(--cr-font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--cr-fg-secondary);
+}
+.cr-value {                  /* numeric callout value, gold */
+  font-family: var(--cr-font-body);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cr-gold);
+}
+.cr-mono {
+  font-family: var(--cr-font-mono);
+  font-size: 14px;
+  color: var(--cr-fg-primary);
+}
+
+/* ── Utility colour classes ─────────────────────────────────────── */
+.cr-fg-gold   { color: var(--cr-gold); }
+.cr-fg-muted  { color: var(--cr-fg-secondary); }
+.cr-fg-success{ color: var(--cr-success); }
+.cr-fg-error  { color: var(--cr-error); }
